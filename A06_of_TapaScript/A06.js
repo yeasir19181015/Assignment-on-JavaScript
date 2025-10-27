@@ -63,3 +63,83 @@ function isPalindrome(str) {
 console.log(isPalindrome("madam"));  // true
 console.log(isPalindrome("hello"));  // false
 console.log(isPalindrome("level"));  // true
+
+
+// 4. Write a Function to Find Factorial of a Number
+// Create a function factorial(n) that returns the factorial of n. Example 5! = 5 * 4 * 3 * 2 * 1
+
+function factorial(n) {
+  if (n < 0) return "Invalid input";
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
+
+
+// 5. Write a function to Count Vowels in a String
+// Write a function countVowels(str) that counts the number of vowels (a, e, i, o, u) in a given string.
+
+function countVowels(str) {
+  // check if input is a string
+  if (typeof str !== "string") {
+    return "Invalid input";
+  }
+
+  // convert string to lowercase (so A/a, E/e works same)
+  str = str.toLowerCase();
+
+  let count = 0;
+
+  // loop through each character
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+    // check if character is a vowel
+    if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// Example usage:
+console.log(countVowels("JavaScript")); // Output: 3
+console.log(countVowels("Yeasir Arafat Zim")); // Output: 6
+
+// 6. Write a Function to Capitalize the First Letter of Each Word in a Sentence
+// Write a function capitalizeWords(sentence) that takes a sentence and capitalizes the first letter of each word. You can use the toUpperCase() method of string to convert the lowercase to uppercase.
+
+function capitalizeWords(sentence) {
+  // Input check
+  if (typeof sentence !== "string") {
+    return "Invalid input";
+  }
+
+  // Split sentence into words
+  let words = sentence.split(" "); // words array তৈরি হয়
+
+  // Capitalize first letter of each word
+  let capitalizedWords = words.map(word => {
+    if (word.length === 0) return ""; // empty string handle
+    return word[0].toUpperCase() + word.slice(1); // প্রথম letter uppercase + বাকিটা 그대로
+  });
+
+  // Join words back into a sentence
+  return capitalizedWords.join(" ");
+}
+
+// Example usage:
+console.log(capitalizeWords("javascript is fun to learn")); 
+// Output: "Javascript Is Fun To Learn"
+
+console.log(capitalizeWords("yeasir arafat zim")); 
+// Output: "Yeasir Arafat Zim"
+
+
+
+
+
+// 7. Use an IIFE to Print “Hello, JavaScript!”
+// Write an IIFE that prints "Hello, JavaScript!" to the console. Here the Second word must be supplied using paramneter and argument
+
