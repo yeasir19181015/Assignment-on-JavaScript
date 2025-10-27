@@ -82,6 +82,3 @@ rockPaperScissorsGame();
 
 
 
-
-// 2. Build the Secret Number Guessing Game
-// Create the project as explained in the video. 
