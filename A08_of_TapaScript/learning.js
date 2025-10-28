@@ -21,3 +21,13 @@ console.log(sum(4,5));
 var arr = [];
 arr.push (add);
 console.log(arr[0](5,3));
+
+var obj ={
+    sum : add 
+}
+console.log(obj.sum(7,9)) 
+
+setTimeout (function(){
+    console.log ('I have created....')
+} , 2000 )
+
