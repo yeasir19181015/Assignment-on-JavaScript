@@ -1,3 +1,6 @@
+//////    1. Pure function ==== >>>>
+
+
 // var point = {
 //     x : 45 ,
 //     y : 100,
@@ -10,6 +13,9 @@
 // }
 // printPoint(point); // { x: 100, y: 200 } , the value of point object has been changed for side effect
 
+
+
+//////    First Class function ==== >>>>
 
 function add (a,b){
     return a+b ;
@@ -31,3 +37,29 @@ setTimeout (function(){
     console.log ('I have created....')
 } , 2000 )
 
+
+
+
+
+
+//////    Higher order function ==== >>>>
+
+function camera(){
+    console.log("cannon");
+}
+
+function getCapture(camera){
+    camera();
+
+}
+getCapture(camera) // higher order function 
+
+
+function returnFunc(){
+    return function(){
+        console.log("Hello");
+    }
+}
+returnFunc();
+const result = returnFunc();
+result();    
