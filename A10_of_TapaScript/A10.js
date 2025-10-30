@@ -68,10 +68,10 @@
 // func2();
 
 
-// 6. What will be the output and why? 
+// // 6. What will be the output and why? 
 
-console.log(a);
-let a = 10;
+// console.log(a);
+// let a = 10;
 
 // When JavaScript runs your code, it goes through two phases:
 
@@ -90,3 +90,67 @@ let a = 10;
 // → it sees a exists but is not initialized yet,
 // → therefore, it throws:
 // ReferenceError: Cannot access 'a' before initialization 
+
+
+
+// // 7. Where is the age variable accessible? == > In Global 
+// let age = 25;
+// function showAge() {
+//     console.log(age);
+// }
+// console.log(age);
+
+
+
+// // 8. What will be the output and explain the output?  
+// let message = "Hello";
+
+// function outer() {
+//     let message = "Hi";
+
+//     function inner() {
+//         console.log(message);
+//     }
+
+//     inner();
+// }
+
+// outer();
+
+// ===> When inner() runs, JavaScript looks for the variable message.
+// It first checks inside its own scope, then in its parent scope (outer).
+
+// Since message is not defined inside inner(),
+// it finds message inside outer() — which is "Hi".
+
+// Lexical scope means:
+// A function can access variables from the scope where it was defined,
+// not from where it was called. 
+
+
+
+
+
+
+
+
+
+
+// 9. What will be the output and why? 
+let x = "Global";
+
+function outer() {
+    let x = "Outer";
+
+    function inner() {
+        let x = "Inner";
+        console.log(x);
+    }
+
+    inner();
+}
+outer();
+
+// Lexical scope means:
+// A function can access variables from the scope where it was defined,
+// not from where it was called. 
