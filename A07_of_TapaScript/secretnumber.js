@@ -23,51 +23,103 @@
 // Give the option to play again
 
 
-    const min = 1;
-    const max = 10;
-function secretNumberGuessingGame() {
+//     const min = 1;
+//     const max = 10;
+// function secretNumberGuessingGame() {
     
-    console.log("Getting Started With Secret Number Guessing Game");
+//     console.log("Getting Started With Secret Number Guessing Game");
 
-    const secretNumber = Math.floor(Math.random() * MAX_NUMBER) + 1;
-    let numberOfAttempts = 0;
-    let guessingNumber = null;
+//     const secretNumber = Math.floor(Math.random() * max) + 1;
+//     let numberOfAttempts = 0;
+//     let guessingNumber = null;
    
-    console.log("Try to guess a number between 1 and 10.");
+//     console.log("Try to guess a number between 1 and 10.");
 
-    while(guessingNumber !== secretNumber){
-         const guessPrompt = prompt("Enter your guess: ");
-          guessingNumber = parseInt(guessPrompt);
+//     while(guessingNumber !== secretNumber){
+//          const guessPrompt = prompt("Enter your guess: ");
+//           guessingNumber = parseInt(guessPrompt);
 
           
-        if (isNaN(guessingNumber) || guessingNumber < min || guessingNumber > max) {
-            console.log(`Invalid input! Please enter a number between ${min} and ${max}.`);
-            continue;
-        }
-    }
-    numberOfAttempts++;
+//         if (isNaN(guessingNumber) || guessingNumber < min || guessingNumber > max) {
+//             console.log(`Invalid input! Please enter a number between ${min} and ${max}.`);
+//             continue;
+//         }
+//     }
+//     numberOfAttempts++;
 
     
-        if (guessingNumber < secretNumber) {
+//         if (guessingNumber < secretNumber) {
+//             console.log(`Too Low! Try again.`);
+//         } 
+//         else if (guessingNumber > secretNumber) {
+//             console.log(`Too High! Try again.`);
+//         } 
+//         else {
+//             console.log(`🎉 Congrats! You guessed the number in ${numberOfAttempts} attempts.`);
+           
+//         }
+    
+//      const playAgainPrompt = prompt("Do you want to play again? (yes/no)");
+//     console.log(playAgainPrompt);
+//     const playAgain = playAgainPrompt ? playAgainPrompt.toLocaleLowerCase() : "no";
+//     if (playAgain === "yes") {
+//         secretNumberGuessingGame();
+//     } else {
+//         console.log("Thanks for playing! See you next time.");
+//     }
+
+
+// }
+
+// // Start This Game
+// secretNumberGuessingGame();
+
+
+
+
+// here is the tapascript code : 
+
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 10;
+
+function startSecretNumberGame() {
+    const secretNumber = Math.floor(Math.random() * MAX_NUMBER) + 1;
+    let attempts = 0;
+    let guess = null;
+
+    console.log("Welcome to the Number Guessing Game!");
+    console.log("Try to guess a number between 1 and 10.");
+
+    while (guess !== secretNumber) {
+        const guessPrompt = prompt("Enter your guess: ");
+        guess = parseInt(guessPrompt);
+
+        if (isNaN(guess) || guess < MIN_NUMBER || guess > MAX_NUMBER) {
+            console.log(`Invalid input! Please enter a number between ${MIN_NUMBER} and ${MAX_NUMBER}.`);
+            continue;
+        }
+
+        attempts++;
+
+        if (guess < secretNumber) {
             console.log("Too Low! Try again.");
-        } else if (guessingNumber > secretNumber) {
+        } else if (guess > secretNumber) {
             console.log("Too High! Try again.");
         } else {
             console.log(`🎉 Congrats! You guessed the number in ${attempts} attempts.`);
             break;
         }
-    
-        const playAgainPrompt = prompt("Do you want to play again? (yes/no)");
+    }
+
+    const playAgainPrompt = prompt("Do you want to play again? (yes/no)");
     console.log(playAgainPrompt);
     const playAgain = playAgainPrompt ? playAgainPrompt.toLocaleLowerCase() : "no";
     if (playAgain === "yes") {
         startSecretNumberGame();
     } else {
         console.log("Thanks for playing! See you next time.");
-    }
-
-
+    } 
 }
 
-// Start This Game
-secretNumberGuessingGame();
+// Start the game
+startSecretNumberGame();

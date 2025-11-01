@@ -15,27 +15,27 @@
 
 
 
-//////    First Class function ==== >>>>
+// //////    First Class function ==== >>>>
 
-function add (a,b){
-    return a+b ;
-}
+// function add (a,b){
+//     return a+b ;
+// }
 
-var sum = add;
-console.log(sum(4,5));
+// var sum = add;
+// console.log(sum(4,5));
 
-var arr = [];
-arr.push (add);
-console.log(arr[0](5,3));
+// var arr = [];
+// arr.push (add);
+// console.log(arr[0](5,3));
 
-var obj ={
-    sum : add 
-}
-console.log(obj.sum(7,9)) 
+// var obj ={
+//     sum : add 
+// }
+// console.log(obj.sum(7,9)) 
 
-setTimeout (function(){
-    console.log ('I have created....')
-} , 2000 )
+// setTimeout (function(){
+//     console.log ('I have created....')
+// } , 2000 )
 
 
 
@@ -63,3 +63,10 @@ function returnFunc(){
 returnFunc();
 const result = returnFunc();
 result();    
+
+let sum =  0;
+for (let i = 0; i<=10;i++){
+  
+    sum += i;
+}
+console.log (sum);

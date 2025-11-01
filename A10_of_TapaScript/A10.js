@@ -1,4 +1,4 @@
-// // 1. What will be the output of the following code and why? 
+// 1. What will be the output of the following code and why? 
 // let user = "Alice";
 
 // function outer() {
@@ -8,7 +8,6 @@
 //     let user = "Bob";
 //     inner();
 // }
-
 // outer();
 
 // 2. What is the mistake in the code below? 
@@ -94,8 +93,9 @@
 
 
 // // 7. Where is the age variable accessible? == > In Global 
-// let age = 25;
+
 // function showAge() {
+//     let age = 25;
 //     console.log(age);
 // }
 // console.log(age);
@@ -136,21 +136,37 @@
 
 
 
-// 9. What will be the output and why? 
-let x = "Global";
+// // 9. What will be the output and why? 
+// let x = "Global";
 
-function outer() {
-    let x = "Outer";
+// function outer() {
+//     let x = "Outer";
 
-    function inner() {
-        let x = "Inner";
-        console.log(x);
-    }
+//     function inner() {
+//         let x = "Inner";
+//         console.log(x);
+//     }
 
-    inner();
-}
-outer();
+//     inner();
+// }
+// outer();
 
 // Lexical scope means:
 // A function can access variables from the scope where it was defined,
 // not from where it was called. 
+
+
+function counter() {
+    let count = 0;
+    return function () {
+        count--;
+        console.log(count);
+    };
+}
+
+const reduce = counter();
+reduce();
+reduce();
+
+
+
