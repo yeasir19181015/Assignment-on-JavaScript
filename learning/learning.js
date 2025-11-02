@@ -66,3 +66,42 @@ for(let i in obj3){
     console.log(obj3[i]);
 }
 
+const obj4 = {a:10 , b:20};
+const copyObj4 = {};
+let x = Object.assign(copyObj4,obj4);
+console.log (x);
+
+console.log("here is obj4", obj4);
+console.log("here is copyObj4", copyObj4);
+
+// using "assign" method in objects 
+const obj5 = {a :1 , b: {c:2}};
+const obj6 = Object.assign({}, obj5);
+console.log(obj5);
+
+console.log(obj5.b.c);
+console.log(obj6.b.c);
+
+// using structured method in objects 
+const obj7 =structuredClone(obj5);
+obj7.a = 300;
+obj7.b.c = 400;
+console.log(obj7.a);
+console.log(obj5.a);
+console.log(obj7.b.c);
+console.log(obj5.b.c);
+
+// spread operation using 
+
+// 1. 
+const obj9 = {...obj8};
+// 2.  
+Object.assign (obj2,obj1);
+// 3.
+for (key in obj8)
+{
+    let newKey = key;
+    let newValue = obj8[key];
+    const obj9[newKey] = newValue;
+}
+
