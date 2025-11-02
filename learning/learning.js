@@ -47,3 +47,22 @@ Object.defineProperty(user, 'isMaintainer',{
 console.log(user);
 
 
+
+// comparing objects in 2 ways 
+// 1.using object properties 
+let obj = {a:20,b:30,};
+let obj2 = {a:20 , b:30,};
+if (obj.a === obj2.a && obj.b === obj2.b){
+    console.log(true);
+} else {console.log(false)};
+
+// 2. using JSON.stringify : 
+console.log (JSON.stringify(obj)===JSON.stringify(obj2))
+
+
+// *** Object iteration 
+const obj3 = {a: 10, b:20, c:30, d:40,};
+for(let i in obj3){
+    console.log(obj3[i]);
+}
+
