@@ -34,3 +34,22 @@ console.log(`Extracting company property : ${person.company}`)
 // 4. Build a Student Management System
 // Store student details in an object (name, age, grades).
 // Implement a method to calculate the average grade. 
+
+
+// 5. Book Store Inventory System
+// Store books in an object.
+// Add functionality to check availability and restock books.
+
+
+// 6. What is the difference between Object.keys() and Object.entries()? Explain with examples 
+
+
+// 7. How do you check if an object has a certain property? 
+
+// 8. What will be the output and why? 
+const person = { name: "John" };
+const newPerson = person;
+newPerson.name = "Doe";
+console.log(person.name);
+
+// 9. What’s the best way to deeply copy a nested object? Expalin with examples 
