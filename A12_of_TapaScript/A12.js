@@ -53,3 +53,40 @@ newPerson.name = "Doe";
 console.log(person.name);
 
 // 9. What’s the best way to deeply copy a nested object? Expalin with examples 
+
+const student = {
+  name: "Yeasir",
+  info: {
+    age: 21,
+    department: "ICT"
+  }
+};
+
+// Shallow copy using spread operator
+const copyStudent = { ...student };
+
+// Modify nested object
+copyStudent.info.age = 25;
+
+console.log(student.info.age); // ❌ 25 — also changed!
+
+
+
+// 10. Loop and print values using Object destructuiring
+const users = [
+  {
+      'name': 'Alex',
+      'address': '15th Park Avenue',
+      'age': 43
+  },
+  {
+      'name': 'Bob',
+      'address': 'Canada',
+      'age': 53
+  },
+  {
+      'name': 'Carl',
+      'address': 'Bangalore',
+      'age': 26
+  }
+];
