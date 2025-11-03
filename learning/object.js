@@ -93,15 +93,54 @@ console.log(obj5.b.c);
 
 // spread operation using 
 
-// 1. 
-const obj9 = {...obj8};
-// 2.  
-Object.assign (obj2,obj1);
-// 3.
-for (key in obj8)
-{
-    let newKey = key;
-    let newValue = obj8[key];
-    const obj9[newKey] = newValue;
+// // 1. 
+// const obj9 = {...obj8};
+// // 2.  
+// Object.assign (obj2,obj1);
+// // 3.
+// for (key in obj8)
+// {
+//     let newKey = key;
+//     let newValue = obj8[key];
+//     const obj9[newKey] = newValue;
+// }
+
+// object to array convert :
+let objj = {a:10, b:20, c:30};
+console.log(objj);
+console.log(Object.keys(objj));
+console.log(Object.values(objj));
+const newArr = Object.entries(objj)
+console.log(newArr);
+const newObj = Object.fromEntries(newArr);
+console.log(newObj);
+
+// seal method : if seal is used then the existing property of object can be updated but can not add any property in the main object 
+const dept={name:"EEE"};
+Object.seal(dept);
+dept.name = "ICT";
+console.log(dept.name);
+
+// freeze & deepfreeze methods :
+let obj11 = {a:10, b:20, c:30};
+let newObj11 = Object.freeze(obj11);
+console.log(newObj11 === obj11); // true
+
+// deepfreeze : is used to freeze nested object 
+let user1 = {
+    name1 : "Yeasir",
+    age1 : 26,
+    Address : {
+        city1: "Dhaka",
+        thana: "Mohammadpur",
+    }
 }
+let deepfreeze = (user1) = {
+    Object.keys(user1).array.forEach(key => {
+        if (typeof user1['key']=== "Object")
+    });
+}
+
+
+
 
