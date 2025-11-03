@@ -127,20 +127,48 @@ let newObj11 = Object.freeze(obj11);
 console.log(newObj11 === obj11); // true
 
 // deepfreeze : is used to freeze nested object 
-let user1 = {
-    name1 : "Yeasir",
-    age1 : 26,
-    Address : {
-        city1: "Dhaka",
-        thana: "Mohammadpur",
-    }
-}
-let deepfreeze = (user1) = {
-    Object.keys(user1).array.forEach(key => {
-        if (typeof user1['key']=== "Object")
-    });
-}
+// let user1 = {
+//     name1 : "Yeasir",
+//     age1 : 26,
+//     Address : {
+//         city1: "Dhaka",
+//         thana: "Mohammadpur",
+//     }
+// }
+// let deepfreeze = (user1) => {
+//     Object.keys(user1).array.forEach(key => {
+//           if (typeof user1['key']=== "Object"){
+//              deepfreeze(user1[key]);
+//           }
+//            Object.freeze(user1);
+//     })
+// }
+// deepfreeze(user1)
 
+// // Point 2 objects with same reference: 
+// Object(xx,xy);
+
+
+let user1 = {
+  name1: "Yeasir",
+  age1: 26,
+  Address: {
+    city1: "Dhaka",
+    thana: "Mohammadpur",
+  },
+};
+let deepfreeze = (user1) => {
+  Object.keys(user1).forEach((key) => {
+    if (typeof user1["key"] === "Object") {
+      deepfreeze(user1[key]);
+    }
+    return Object.freeze(user1);
+  });
+};
+deepfreeze(user1);
+console.log("check check ")
+console.log(Object.isFrozen(user1));
+console.log(Object.isSealed(user1));
 
 
 

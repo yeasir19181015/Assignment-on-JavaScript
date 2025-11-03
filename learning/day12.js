@@ -1,57 +1,57 @@
 console.log("Day 12 - JavaScript Objects");
 
-// let user = {
-//     name: "tapas",
-//     age: 40,
-//     "is adimin": true
-// };
+let user = {
+    name: "tapas",
+    age: 40,
+    "is adimin": true
+};
 
-// console.log(user.name); // "tapas"
-// console.log(user.age); // 40
+console.log(user.name); // "tapas"
+console.log(user.age); // 40
 
-// user.isSeniorCitizen = false;
-// user["movie lover"] = true;
+user.isSeniorCitizen = false;
+user["movie lover"] = true;
 
-// console.log(user);
+console.log(user);
 
-// console.log(user["is adimin"]);
+console.log(user["is adimin"]);
 
-// user.age = 34;
-// user["movie lover"] = false;
+user.age = 34;
+user["movie lover"] = false;
 
-// // delete user["movie lover"];
-// // delete user.age;
-// console.log(user)
+// delete user["movie lover"];
+// delete user.age;
+console.log(user)
 
-// const someKey = "age";
+const someKey = "age";
 
-// console.log(user[someKey]); // 34
+console.log(user[someKey]); // 34
 
-// /*let car = prompt("Which is your fav car?");
+/*let car = prompt("Which is your fav car?");
 
-// let favCars = {
-//     [car]: 5
-// }
+let favCars = {
+    [car]: 5
+}
 
-// console.log(favCars);*/
+console.log(favCars);*/
 
-// // Cosntructor Function
-// function Car(name, model) {
-//     this.name = name;
-//     this.model = model
-// }
+// Cosntructor Function
+function Car(name, model) {
+    this.name = name;
+    this.model = model
+}
 
-// const bmwCar = new Car("BMW", "X1");
-// const audiCar = new Car("Audi", "A8");
-// console.log(bmwCar)
-// console.log(audiCar)
+const bmwCar = new Car("BMW", "X1");
+const audiCar = new Car("Audi", "A8");
+console.log(bmwCar)
+console.log(audiCar)
 
-// console.log(bmwCar instanceof Car);
+console.log(bmwCar instanceof Car);
 
-// const person = new Object()
-// person.name = "Alpha";
-// person.age = 76;
-// console.log(person);
+const person = new Object()
+person.name = "Alpha";
+person.age = 76;
+console.log(person);
 
 
 // factory
@@ -200,17 +200,17 @@ console.log(user2)
 // console.log(Object.isFrozen(emp));
 
 
-// const dept = {
-//     name: "finance"
-// }
+const dept = {
+    name: "finance"
+}
 
-// Object.seal(dept);
+Object.seal(dept);
 
-// dept.address = "Bangalore"
-// delete dept.name;
+dept.address = "Bangalore"
+delete dept.name;
 
-// dept.name = "HR"
-// console.log(dept)
+dept.name = "HR"
+console.log(dept)
 
-// console.log(Object.hasOwn(dept, "address"))
+console.log(Object.hasOwn(dept, "address"))
 
