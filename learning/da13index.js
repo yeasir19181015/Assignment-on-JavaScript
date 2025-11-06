@@ -1,11 +1,10 @@
-"use strict";
-
+// "use strict";
 console.log("Day 13: The this keyword");
 
 // Global
 
 // this keyword and window object
-console.log("this at the global", this); // window
+console.log("this at the global", this); // window 
 
 // object
 // function
@@ -56,6 +55,7 @@ jerry.logMessage();
 
 
 // Inside Function
+
 function sayName() {
     console.log("this inside a function", this);
 }
@@ -154,7 +154,5 @@ tomCartoon.log();
 
 const jerryCartoon = new Cartoon("Jerry", "Mouse");
 jerryCartoon.log();
-
-
 
 
