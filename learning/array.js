@@ -49,3 +49,42 @@ console.log("Day 15: JavaScript Array Master Course");
     const unRet = salad.unshift("🥜");
     console.log(unRet); // 9
     console.log(salad);
+
+
+    // pop - end
+    console.log(salad);
+    const popRet = salad.pop();
+    console.log(popRet);
+    console.log(salad);
+
+    // shift() - start
+    console.log(salad);
+    const shiftRet = salad.shift();
+    console.log(shiftRet);
+    console.log(salad);
+
+    // slice() - copy
+
+    // salad = ['🍅', '🍄', '🥦', '🥒', '🌽', '🥕', '🥑'];
+    const saladCopy = salad.slice();
+    console.log("Salad Before Copy", salad);
+    console.log("Salad After Copy", saladCopy);
+    console.log(salad === saladCopy); // false
+
+    // Deletermine if Array
+    Array.isArray(["🍅", "🍄", "🥦", "🥒", "🌽", "🥕", "🥑"]); // true;
+    Array.isArray("🍅"); // returns false
+    Array.isArray({ tomato: "🍅" }); // returns false
+    Array.isArray([]); // returns true
+
+    const arr = [1, 2, 3, 4];
+    Array.isArray(arr); // true
+}
+// Array Destructuring
+{
+    const salad = ["🍅", "🍄", "🥦", "🥒", "🌽", "🥕", "🥑"];
+
+    const tomato = salad[0];
+    const mushroom = salad[1];
+    const carrot = salad[5];
+}
