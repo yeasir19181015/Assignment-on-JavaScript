@@ -309,28 +309,54 @@ console.log(str3); // "Apple-Banana-Cherry-Mango"
 
 
 
+
 // Consider these input arrays for question T-21 to T-48
 
 // employees array: An array of employees working in a department.
 
-// const employees = [
-//   { id: 1, name: "Alice", departmentId: 1, salary: 5000 },
-//   { id: 2, name: "Bob", departmentId: 2, salary: 7000 },
-//   { id: 3, name: "Charlie", departmentId: 3, salary: 4500 },
-//   { id: 4, name: "Diana", departmentId: 1, salary: 5500 },
-//   { id: 5, name: "Edward", departmentId: 2, salary: 8000 },
-//   { id: 6, name: "Fiona", departmentId: 4, salary: 6000 },
-//   { id: 7, name: "George", departmentId: 3, salary: 5200 },
-//   { id: 8, name: "Helen", departmentId: 4, salary: 7200 },
-//   { id: 9, name: "Ian", departmentId: 2, salary: 4800 },
-//   { id: 10, name: "Jane", departmentId: 1, salary: 5100 },
-// ];
+const employees = [
+  { id: 1, name: "Alice", departmentId: 1, salary: 5000 },
+  { id: 2, name: "Bob", departmentId: 2, salary: 7000 },
+  { id: 3, name: "Charlie", departmentId: 3, salary: 4500 },
+  { id: 4, name: "Diana", departmentId: 1, salary: 5500 },
+  { id: 5, name: "Edward", departmentId: 2, salary: 8000 },
+  { id: 6, name: "Fiona", departmentId: 4, salary: 6000 },
+  { id: 7, name: "George", departmentId: 3, salary: 5200 },
+  { id: 8, name: "Helen", departmentId: 4, salary: 7200 },
+  { id: 9, name: "Ian", departmentId: 2, salary: 4800 },
+  { id: 10, name: "Jane", departmentId: 1, salary: 5100 },
+];
 // departments array: An array of departments where employees work.
-// const departments = [
-//   { id: 1, name: "HR" },
-//   { id: 2, name: "Engineering" },
-//   { id: 3, name: "Marketing" },
-//   { id: 4, name: "Sales" },
-// ];
+const departments = [
+  { id: 1, name: "HR" },
+  { id: 2, name: "Engineering" },
+  { id: 3, name: "Marketing" },
+  { id: 4, name: "Sales" },
+];
 
 //  T-021: Can you filter employees who work in the "Engineering" department?
+// Answer:
+
+
+// Step 1: Find the departmentId for "Engineering"
+const engineeringDept = departments.find(dept => dept.name === "Engineering");
+
+// Step 2: Filter employees whose departmentId matches Engineering
+const engineeringEmployees = employees.filter(emp => emp.departmentId === engineeringDept.id);
+
+console.log("Engineering employees are:",engineeringEmployees);
+
+
+
+
+//  T-022: Create a new array that combines employee names and department names in the format: "Alice (HR)".
+// Answer:
+
+// Step 1: Map employee names with department names
+const employeeWithDept = employees.map(emp => {
+  // Find the department name for the employee
+  const deptName = departments.find(dept => dept.id === emp.departmentId).name;
+  return `${emp.name} (${deptName})`;
+});
+
+console.log(employeeWithDept);
