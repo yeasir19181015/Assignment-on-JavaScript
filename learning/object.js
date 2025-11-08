@@ -171,4 +171,3 @@ console.log(Object.isFrozen(user1));
 console.log(Object.isSealed(user1));
 
 
-

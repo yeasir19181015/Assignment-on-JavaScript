@@ -117,11 +117,11 @@ console.log("Day 15: JavaScript Array Master Course");
 {
 let fruits = ['🍈', '🍍', '🍌', '🍉', ['🍅', '🍄', '🥕']];
 const veg = fruits[4]; // ['🍅', '🍄', '🥕']
-const carrot = veg[2]; // '🥕'
+// const carrot = veg[2]; // '🥕'
 
 fruits[4][2]; // '🥕'
 
-let [,,,,[,,carrot]] = ['🍈', '🍍', '🍌', '🍉', ['🍅', '🍄', '🥕']];
+// let [,,,,[,,carrot]] = ['🍈', '🍍', '🍌', '🍉', ['🍅', '🍄', '🥕']]; 
 
 }
 
@@ -138,7 +138,7 @@ console.log(mySaaladCopy); // ["🍅", "🍄", "🥦", "🥒", "🌽", "🥕", "
 
 mySalad === mySaaladCopy; // false
 }
-*/
+// */ 
 
 // Swapping
 {
@@ -338,14 +338,14 @@ console.log(arr1)
         { name: "Tom", dept: "Sales", salary: 6000 },
     ];
 
-    const groupedByDet = Object.groupBy(employees, ({ dept }) => dept);
-    console.log(groupedByDet);
+    // const groupedByDet = Object.groupBy(employees, ({ dept }) => dept); 
+    // console.log(groupedByDet); 
 
-    const groupedByMoreThan5000 = Object.groupBy(employees, ({ salary }) => {
-        return salary >= 5000 ? "More than 5k" : "Less than 5k";
-    });
-    console.log(groupedByMoreThan5000);
-}
+//     const groupedByMoreThan5000 = Object.groupBy(employees, ({ salary }) => {
+//         return salary >= 5000 ? "More than 5k" : "Less than 5k";
+//     });
+//     console.log(groupedByMoreThan5000);
+// }
 
 // toReversed()
 {
@@ -646,3 +646,4 @@ const totalExpense = customers
     .reduce((accum, expense) => {
         return accum + expense;
     }, 0);
+}
