@@ -185,8 +185,152 @@ console.log(result.length);
 // Answer:
 // Array of strings
 const fruitsNew = ["Apple", "Banana", "Cherry", "Mango"];
+
 // Value to partially match
 const searchValue = "nan";
+
 // Check if any element partially matches
 const isPartialMatch = fruitsNew.some(fruit => fruit.toLowerCase().includes(searchValue.toLowerCase()));
 console.log(isPartialMatch); // true
+
+// using filter method 
+const matches = fruits.filter(fruit => fruit.toLowerCase().includes(searchValue.toLowerCase()));
+console.log(matches); // ['Banana']
+
+
+
+// T-016: What is the difference between the slice() and splice() methods?
+// Answer:
+
+const fruits6 = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+
+// Extract elements from index 1 to 3 (excluding 3)
+const slicedFruits = fruits6.slice(1, 3);
+
+console.log("Original Array:", fruits6);       // ["Apple", "Banana", "Cherry", "Mango", "Orange"]
+console.log("Sliced Array:", slicedFruits);   // ["Banana", "Cherry"]
+
+const fruits7 = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+
+// Remove 2 elements starting from index 1 and insert "Pineapple"
+const removed = fruits7.splice(1, 2, "Pineapple");
+
+console.log("Removed Elements:", removed);     // ["Banana", "Cherry"]
+console.log("Modified Array:", fruits7);       // ["Apple", "Pineapple", "Mango", "Orange"]
+
+
+//  T-017: Create an Array of alphanumeric strings. Sort the elements in both ascending and descending orders. You must be doing this in an immutable way such that the source array never gets modified.
+// Answer:
+// Original array of alphanumeric strings
+const items = ["B12", "A45", "C23", "D01", "A10"];
+
+console.log("Original Array:", items);
+
+// Ascending order (immutable)
+const ascending = [...items].sort(); // Spread operator creates a copy
+console.log("Ascending Order:", ascending);
+
+// Descending order (immutable)
+const descending = [...items].sort().reverse();
+console.log("Descending Order:", descending);
+
+// Verify original array is unchanged
+console.log("Original Array After Sorting:", items);
+
+// T-018: Can you give examples of sparse and dense arrays?  
+// Answer:
+// Example of dense array :
+const denseArray = [1, 2, 3, 4, 5];
+
+console.log("the dense array : ",denseArray);        // [1, 2, 3, 4, 5]
+console.log("the dense array length : ",denseArray.length); // 5
+console.log("the 3rd index of dense array : ",denseArray[2]);     // 3 (every index exists)
+
+// Example of sparse array :
+const sparseArray = [];
+sparseArray[0] = 1;
+sparseArray[3] = 4;
+
+console.log("the sparse array : ",sparseArray);       // [1, <2 empty items>, 4]
+console.log("the sparse array length : ",sparseArray.length); // 4
+console.log("the 2nd index of sparse array : ",sparseArray[1]);     // undefined
+console.log("Existence the index 1 of sparse array : ",1 in sparseArray);   // false (index 1 does not exist)
+
+
+// T-019: Give a practical usages of the .fill() method 
+// Answer:
+// 1️ Initialize an array with default values:
+const numbers3 = new Array(5).fill(0);
+console.log(numbers3); // [0, 0, 0, 0, 0]
+// Useful when you want a pre-filled array for calculations.
+
+// 2️ Fill part of an array
+const fruits4 = ["Apple", "Banana", "Cherry", "Mango"];
+fruits.fill("Orange", 1, 3); // Fill from index 1 to 2
+console.log(fruits4); // ["Apple", "Orange", "Orange", "Mango"]
+// Useful for updating specific range of elements.
+
+// 3️ Reset an array
+let scores = [10, 20, 30, 40];
+scores.fill(0);
+console.log(scores); // [0, 0, 0, 0]
+// Quickly reset all values to a default.
+
+// 4️ Create a matrix (2D array) placeholder
+const rows = 3;
+const cols = 4;
+const matrix = new Array(rows).fill().map(() => new Array(cols).fill(0));
+console.log(matrix);
+/* Output:
+[
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0]
+]
+*/
+// Useful for initializing 2D arrays for games or grids.
+
+
+
+// T-020: How to convert an array to a string? 
+// Answer:
+const fruits5 = ["Apple", "Banana", "Cherry", "Mango"];
+
+// Join with space
+const str2 = fruits5.join(" ");
+console.log(str2); // "Apple Banana Cherry Mango"
+// Join with hyphen
+const str3 = fruits5.join("-");
+console.log(str3); // "Apple-Banana-Cherry-Mango"
+
+
+
+
+
+
+
+// Consider these input arrays for question T-21 to T-48
+
+// employees array: An array of employees working in a department.
+
+// const employees = [
+//   { id: 1, name: "Alice", departmentId: 1, salary: 5000 },
+//   { id: 2, name: "Bob", departmentId: 2, salary: 7000 },
+//   { id: 3, name: "Charlie", departmentId: 3, salary: 4500 },
+//   { id: 4, name: "Diana", departmentId: 1, salary: 5500 },
+//   { id: 5, name: "Edward", departmentId: 2, salary: 8000 },
+//   { id: 6, name: "Fiona", departmentId: 4, salary: 6000 },
+//   { id: 7, name: "George", departmentId: 3, salary: 5200 },
+//   { id: 8, name: "Helen", departmentId: 4, salary: 7200 },
+//   { id: 9, name: "Ian", departmentId: 2, salary: 4800 },
+//   { id: 10, name: "Jane", departmentId: 1, salary: 5100 },
+// ];
+// departments array: An array of departments where employees work.
+// const departments = [
+//   { id: 1, name: "HR" },
+//   { id: 2, name: "Engineering" },
+//   { id: 3, name: "Marketing" },
+//   { id: 4, name: "Sales" },
+// ];
+
+//  T-021: Can you filter employees who work in the "Engineering" department?
