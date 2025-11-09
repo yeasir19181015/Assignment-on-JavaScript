@@ -418,4 +418,43 @@ console.log("Total Salary of all employees:", totalSalary);
 
 
 
+// T-028: Is there any employee earning less than 5000?
+function employeesLessThan5000(employees) {
+  return employees.filter(employee => employee.salary < 5000);
+}
+const lessEarners = employeesLessThan5000(employees);
+
+console.log("Employees are less than 5000 salary: ");
+console.log(lessEarners);
+
+// T-029: Find the first employee who earns exactly 5100.
+// Answer:
+function employeesEqualTo5100(employees){
+  return employees.filter(employee => employee.salary === 5100);
+}
+const equal5100earner = employeesEqualTo5100(employees);
+console.log("Employees are equal to 5100 salary :");
+console.log(equal5100earner);
+
+
+// 🔹 Find first employee earning exactly 5100
+const employeeWith5100 = employees.find(employee => employee.salary === 5100);
+
+console.log("Employee earning exactly 5100:");
+console.log(employeeWith5100);
+
+
+// T-030: Find the last employee in the "HR" department.
+
+// 🔹 Step 1: Find the departmentId for "HR"
+const hrDept = departments.find(dept => dept.name === "HR");
+
+// 🔹 Step 2: Filter employees working in HR
+const hrEmployees = employees.filter(emp => emp.departmentId === hrDept.id);
+
+// 🔹 Step 3: Get the last employee
+const lastHREmployee = hrEmployees[hrEmployees.length - 1];
+
+console.log("Last employee in HR department:");
+console.log(lastHREmployee);
 
