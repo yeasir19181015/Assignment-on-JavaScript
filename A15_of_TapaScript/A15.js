@@ -334,29 +334,88 @@ const departments = [
   { id: 4, name: "Sales" },
 ];
 
+
 //  T-021: Can you filter employees who work in the "Engineering" department?
 // Answer:
-
-
 // Step 1: Find the departmentId for "Engineering"
 const engineeringDept = departments.find(dept => dept.name === "Engineering");
 
 // Step 2: Filter employees whose departmentId matches Engineering
 const engineeringEmployees = employees.filter(emp => emp.departmentId === engineeringDept.id);
 
-console.log("Engineering employees are:",engineeringEmployees);
+console.log(engineeringEmployees);
 
 
 
 
 //  T-022: Create a new array that combines employee names and department names in the format: "Alice (HR)".
 // Answer:
-
 // Step 1: Map employee names with department names
 const employeeWithDept = employees.map(emp => {
   // Find the department name for the employee
   const deptName = departments.find(dept => dept.id === emp.departmentId).name;
-  return `${emp.name} (${deptName})`;
+  return `Employee names with department ${emp.name} (${deptName})`;
 });
 
 console.log(employeeWithDept);
+
+
+
+
+// T-023: Find the highest salary among employees. 
+// Answer: 
+//using reduce() 
+const highestSalary = employees.reduce((max, emp) => {
+  return emp.salary > max ? emp.salary : max; 
+}, 0);
+console.log("Highest Salary:", highestSalary);
+
+
+
+
+// T-024: Check if there is at least one employee in the "Sales" department.
+// Answer:
+// Step 1: Find the departmentId for "Sales"
+const salesDept = departments.find(dept => dept.name === "Sales");
+
+// Step 2: Check if any employee belongs to that department
+const hasSalesEmployee = employees.some(emp => emp.departmentId === salesDept.id);
+console.log("Is there at least one employee in Sales?", hasSalesEmployee);
+
+
+
+
+// T-025: Write a function to filter employees earning more than 6000. 
+// Function to filter employees earning more than 6000
+function filterEmployeesBySalary(employees) {
+  return employees.filter(employee => employee.salary > 6000);
+}
+// Call the function
+const highEarners = filterEmployeesBySalary(employees);
+
+console.log("Employees earning more than 6000:");
+console.log(highEarners);
+
+
+
+
+//  T-026: Create an array of employee names only. 
+// Answer:
+// Extract only employee names using map()
+const employeeNames = employees.map(employee => employee.name);
+console.log("Employee Names:");
+console.log(employeeNames);
+
+
+
+
+// T-027: Calculate the total salary of all employees using
+// Answer:
+// Calculate total salary using reduce()
+const totalSalary = employees.reduce((sum, employee) => sum + employee.salary ,0);
+console.log("Total Salary of all employees:", totalSalary);
+
+
+
+
+
